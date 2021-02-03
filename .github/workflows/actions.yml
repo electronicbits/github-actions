@@ -12,7 +12,7 @@ jobs:
           ls -a          
       - name: Checkout code
         uses: actions/checkout@v1
-      - name: List Files
+      - name: List files after checkout
         run: |
           pwd
           ls -a
