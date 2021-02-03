@@ -1,24 +1,52 @@
-name: Actions Workflow
+name: Manually triggered workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
 
-on: [pull_request]
-
-jobs: 
-  run-github-actions:
+jobs:
+  say_hello:
     runs-on: ubuntu-latest
     steps:
-      - name: List Files
-        run: |
-          pwd
-          ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{github.token}}"
-          # git clone git@github:$GITHUB_REPOSITORY
-          # git checkout $GITHUB_SHA
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: List Files After Checkout
-        run: |
-          pwd
-          ls -a  
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
+
+
+# name: Actions Workflow
+
+# on: 
+#   workflow_dispatch:    
+#   # push:
+#   # pull_request:
+#   #   types:
+#   #     - "opened"
+#   #     - "assigned"
+
+# jobs: 
+#   run-github-actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: List Files
+#         run: |
+#           pwd
+#           ls -a
+#           echo $GITHUB_SHA
+#           echo $GITHUB_REPOSITORY
+#           echo $GITHUB_WORKSPACE
+#           echo "${{github.token}}"
+#           # git clone git@github:$GITHUB_REPOSITORY
+#           # git checkout $GITHUB_SHA
+#       - name: Checkout
+#         uses: actions/checkout@v1
+#       - name: List Files After Checkout
+#         run: |
+#           pwd
+#           ls -a  
