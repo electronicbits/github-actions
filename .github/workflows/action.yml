@@ -1,5 +1,0 @@
-name: 'Deploy CloudFormation Stack'
-description: 'Deploying a CoudFormation Stack'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
