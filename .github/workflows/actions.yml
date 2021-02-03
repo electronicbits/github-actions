@@ -9,13 +9,14 @@ jobs:
       - name: List Files
         run: |
           pwd
-          ls
-      - name: Checkout code
-        uses: actions/checkout@v1
+          ls -a
+          git checkout 
+      # - name: Checkout code
+      #   uses: actions/checkout@v1
       - name: List Files
         run: |
           pwd
-          ls
+          ls -a
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1
@@ -23,3 +24,4 @@ jobs:
           who-to-greet: Dario
       - name: Log Greeting Time
         run: echo "${{steps.greet.outputs.time}}"
+      - name: test
