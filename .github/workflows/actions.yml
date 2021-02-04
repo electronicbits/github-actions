@@ -1,24 +1,38 @@
-name: Actions Workflow
+name: ENV Variables
+on: push
 
-on: [pull_request]
-
-jobs: 
+jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List Files
+      - name: checkout test
         run: |
-          pwd
-          ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{github.token}}"
-          # git clone git@github:$GITHUB_REPOSITORY
-          # git checkout $GITHUB_SHA
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: List Files After Checkout
-        run: |
-          pwd
-          ls -a
+          git clone https://{{secrets.GITHUB_TOKEN}}@github.com/electronic-bits/github-actions.git
+          git checkout main
+
+
+
+# name: Actions Workflow
+
+# on: [pull_request]
+
+# jobs: 
+#   run-github-actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: List Files
+#         run: |
+#           pwd
+#           ls -a
+#           echo $GITHUB_SHA
+#           echo $GITHUB_REPOSITORY
+#           echo $GITHUB_WORKSPACE
+#           echo "${{github.token}}"
+#           # git clone git@github:$GITHUB_REPOSITORY
+#           # git checkout $GITHUB_SHA
+#       - name: Checkout
+#         uses: actions/checkout@v1
+#       - name: List Files After Checkout
+#         run: |
+#           pwd
+#           ls -a
