@@ -6,9 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout test
-        run: |
-          git clone https://{{secrets.GITHUB_TOKEN}}@github.com/electronic-bits/github-actions.git
-          git checkout main
+      - run: |
+          git clone "https://username:${{github.token}}@github.com/${{github.repository}}.git"
+
+        # run: |
+        #   git clone https://{{secrets.GITHUB_TOKEN}}@github.com/electronic-bits/github-actions.git
+        #   git checkout main
 
 
 
