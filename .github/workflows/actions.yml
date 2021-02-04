@@ -12,7 +12,7 @@ jobs:
           ls -a
       - name: checkout test
         run: |
-          git clone "https://electronicbits:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git clone "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
       - name: List Files
         run: |
           pwd
