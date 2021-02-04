@@ -7,12 +7,11 @@ jobs:
     steps:
       - name: checkout test
       - run: |
-          git clone "https://username:${{github.token}}@github.com/${{github.repository}}.git"
-
+          git clone "https://username:${{secrets.GITHUB_TOKEN}}@github.com/blog.git"
         # run: |
         #   git clone https://{{secrets.GITHUB_TOKEN}}@github.com/electronic-bits/github-actions.git
         #   git checkout main
-
+        # git clone "https://username:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git"
 
 
 # name: Actions Workflow
