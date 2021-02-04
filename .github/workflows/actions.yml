@@ -4,13 +4,11 @@ on: push
 jobs:
   
   run-github-actions:
-    env:
-      TOKEN: ${{secrets.GITHUB_TOKEN}}
     runs-on: ubuntu-latest
     steps:
       - name: checkout test 
         run: |
-          git clone https://${TOKEN}@github.com/electronicbits/blog.git
+          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/electronicbits/blog.git
         
         
         # git clone "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/electronicbits/blog.git"  
