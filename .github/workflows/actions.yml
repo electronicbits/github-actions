@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: checkout test 
         run: |
-          git clone "https://${{ github.token }}@github.com/electronicbits/blog.git"
+          git clone "https://${{ secrets.token }}@github.com/electronicbits/blog.git"
         
         
         # git clone "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/electronicbits/blog.git"  
