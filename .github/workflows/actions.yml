@@ -10,9 +10,9 @@ jobs:
         run: |
           pwd
           ls -a
-      - name: checkout test 
-        run: |        
-          git clone "https://${{ secrets.token }}@github.com/electronicbits/blog.git"
+      - name: checkout test
+        run: |
+          git clone "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/electronicbits/blog.git"
           cd blog
           git checkout master
       - name: List Files
@@ -26,6 +26,7 @@ jobs:
         #   git clone https://{{secrets.GITHUB_TOKEN}}@github.com/electronic-bits/github-actions.git
         #   git checkout main
         # git clone "https://username:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git"
+          #working git clone "https://${{ secrets.token }}@github.com/electronicbits/blog.git"
 
 
 # name: Actions Workflow
