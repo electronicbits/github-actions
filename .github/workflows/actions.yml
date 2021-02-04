@@ -11,7 +11,7 @@ jobs:
           pwd
           ls -a
       - name: checkout test 
-        run: |
+        run: |        
           git clone "https://${{ secrets.token }}@github.com/electronicbits/blog.git"
           git checkout main
       - name: List Files
