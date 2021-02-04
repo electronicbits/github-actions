@@ -13,8 +13,6 @@ jobs:
       - name: checkout test
         run: |
           git clone "https://electronicbits:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          cd blog
-          git checkout master
       - name: List Files
         run: |
           pwd
