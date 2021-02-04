@@ -6,10 +6,18 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
       - name: checkout test 
         run: |
           git clone "https://${{ secrets.token }}@github.com/electronicbits/blog.git"
-        
+          git checkout main
+      - name: List Files
+        run: |
+          pwd
+          ls -a
         
         # git clone "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/electronicbits/blog.git"  
         # "https://electronicbits:${{secrets.GITHUB_TOKEN}}@github.com/electronicbits/blog.git"
