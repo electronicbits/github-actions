@@ -13,6 +13,7 @@ jobs:
       - name: checkout test 
         run: |        
           git clone "https://${{ secrets.token }}@github.com/electronicbits/blog.git"
+          cd blog
           git checkout main
       - name: List Files
         run: |
