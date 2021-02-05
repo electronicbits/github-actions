@@ -1,0 +1,29 @@
+name: Container
+
+on: push
+
+jobs:
+  executing-a-file:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+    steps:
+      - name: log node version
+        run: node -v
+      - name: Log node version
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: /usr/local/bin/node
+          args: '-v'
+      - uses: actions/checkout@v1
+      - name: Run a script
+        uses: docker://node:12.14.1-alpine3.10
+        with: 
+          entrypoint: ./script.sh
+          args: "This is the input parameter string"
+
+    
+      
+
+
+
