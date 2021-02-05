@@ -17,7 +17,7 @@ jobs:
           args: '-v'
       - uses: actions/checkout@v1
       - name: change file permission
-        run: chmod -x ./scripts.sh
+        run: chmod -x script.sh
       - name: Run a script
         uses: docker://node:12.14.1-alpine3.10
         with: 
