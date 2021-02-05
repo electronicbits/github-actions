@@ -20,7 +20,7 @@ jobs:
         -H 'Content-Type: application/json' 
         -d '{\"username\":\"hello\",\"address\":\"test address\"}'"
       - name: Get Users
-        run: curl http://localhost:3001/api/user
+        run: curl http://localhost:3001/api/users
           
       
 
