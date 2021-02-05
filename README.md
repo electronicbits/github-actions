@@ -1,13 +1,6 @@
 # github-actions
 Github actions exploration
 
+## Trying out github actions
 
-## A quick tutorial on getting github actions working 
-
-
-Event
-Workflow
-Job
-Step 
-Action
-Virtual Environment
+Refer to the .github/workflows folder for all the relevant ways github actions can be used

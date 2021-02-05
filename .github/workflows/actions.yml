@@ -1,0 +1,20 @@
+name: ENV Variables
+on: push
+
+jobs:
+  
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: checkout test
+        run: |
+          git clone "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+      - name: List Files
+        run: |
+          pwd
+          ls -a        
+
